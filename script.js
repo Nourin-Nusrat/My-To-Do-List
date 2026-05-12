@@ -1,39 +1,39 @@
 let editTaskId = null;
 
-// ==========================
-// SIDEBAR
-// ==========================
+// // ==========================
+// // SIDEBAR
+// // ==========================
 
-const sidebar = document.getElementById("sidebar");
+// const sidebar = document.getElementById("sidebar");
 
-const menuBtn = document.getElementById("menuBtn");
+// const menuBtn = document.getElementById("menuBtn");
 
-const closeBtn = document.getElementById("closeBtn");
+// const closeBtn = document.getElementById("closeBtn");
 
-const overlay = document.getElementById("overlay");
-
-
-menuBtn.addEventListener("click", () => {
-
-  sidebar.classList.add("active");
-
-  overlay.classList.add("active");
-
-});
+// const overlay = document.getElementById("overlay");
 
 
-closeBtn.addEventListener("click", closeSidebar);
+// menuBtn.addEventListener("click", () => {
 
-overlay.addEventListener("click", closeSidebar);
+//   sidebar.classList.add("active");
+
+//   overlay.classList.add("active");
+
+// });
 
 
-function closeSidebar(){
+// closeBtn.addEventListener("click", closeSidebar);
 
-  sidebar.classList.remove("active");
+// overlay.addEventListener("click", closeSidebar);
 
-  overlay.classList.remove("active");
 
-}
+// function closeSidebar(){
+
+//   sidebar.classList.remove("active");
+
+//   overlay.classList.remove("active");
+
+// }
 
 
 
@@ -60,28 +60,22 @@ let currentView = "today";
 
 
 
-// ==========================
-// OPEN MODAL
-// ==========================
+// // ==========================
+// // OPEN MODAL
+// // ==========================
 
 // addBtn.addEventListener("click", () => {
 
+//   // Reset Edit Mode
+//   editTaskId = null;
+
+//   // Clear Old Inputs
+//   clearInputs();
+
+//   // Open Modal
 //   modal.classList.add("active");
 
 // });
-
-addBtn.addEventListener("click", () => {
-
-  // Reset Edit Mode
-  editTaskId = null;
-
-  // Clear Old Inputs
-  clearInputs();
-
-  // Open Modal
-  modal.classList.add("active");
-
-});
 
 
 
@@ -89,11 +83,11 @@ addBtn.addEventListener("click", () => {
 // CLOSE MODAL
 // ==========================
 
-cancelBtn.addEventListener("click", () => {
+// cancelBtn.addEventListener("click", () => {
 
-  modal.classList.remove("active");
+//   modal.classList.remove("active");
 
-});
+// });
 
 
 
@@ -288,17 +282,17 @@ saveTaskBtn.addEventListener("click", () => {
 // CLEAR INPUTS
 // ==========================
 
-function clearInputs(){
+// function clearInputs(){
 
-  document.getElementById("taskName").value = "";
+//   document.getElementById("taskName").value = "";
 
-  document.getElementById("startDateTime").value = "";
+//   document.getElementById("startDateTime").value = "";
 
-  document.getElementById("endDateTime").value = "";
+//   document.getElementById("endDateTime").value = "";
 
-  document.getElementById("taskNotes").value = "";
+//   document.getElementById("taskNotes").value = "";
 
-}
+// }
 
 
 
@@ -306,38 +300,38 @@ function clearInputs(){
 // FORMAT DATE & TIME
 // ==========================
 
-function formatDateTime(dt) {
+// function formatDateTime(dt) {
 
-  const date = new Date(dt);
+//   const date = new Date(dt);
 
-  const time = date.toLocaleTimeString([], {
+//   const time = date.toLocaleTimeString([], {
 
-    hour: "2-digit",
+//     hour: "2-digit",
 
-    minute: "2-digit"
+//     minute: "2-digit"
 
-  });
-
-
-  const day = date.getDate();
-
-  const month =
-    date.toLocaleString("en-US", {
-      month: "short"
-    });
-
-  const year = date.getFullYear();
+//   });
 
 
-  return {
+//   const day = date.getDate();
 
-    time,
+//   const month =
+//     date.toLocaleString("en-US", {
+//       month: "short"
+//     });
 
-    date: `${day} ${month} ${year}`
+//   const year = date.getFullYear();
 
-  };
 
-}
+//   return {
+
+//     time,
+
+//     date: `${day} ${month} ${year}`
+
+//   };
+
+// }
 
 
 
@@ -651,33 +645,33 @@ document.querySelectorAll(".menu-item")
 
   });
 
-function getRemainingTime(endDate){
+// function getRemainingTime(endDate){
 
-  const now = new Date();
+//   const now = new Date();
 
-  const end = new Date(endDate);
+//   const end = new Date(endDate);
 
-  const diff = end - now;
-
-
-  if(diff <= 0){
-    return "Expired";
-  }
+//   const diff = end - now;
 
 
-  const hours =
-    Math.floor(diff / (1000 * 60 * 60));
-
-  const minutes =
-    Math.floor(
-      (diff % (1000 * 60 * 60))
-      / (1000 * 60)
-    );
+//   if(diff <= 0){
+//     return "Expired";
+//   }
 
 
-  return `${hours}h ${minutes}m`;
+//   const hours =
+//     Math.floor(diff / (1000 * 60 * 60));
 
-}
+//   const minutes =
+//     Math.floor(
+//       (diff % (1000 * 60 * 60))
+//       / (1000 * 60)
+//     );
+
+
+//   return `${hours}h ${minutes}m`;
+
+// }
 
 
 // ==========================

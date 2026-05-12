@@ -1,0 +1,3 @@
+
+// renderTasks(currentView);
+renderTasks(currentView);
