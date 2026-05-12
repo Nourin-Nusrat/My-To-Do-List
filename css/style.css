@@ -294,18 +294,18 @@ body {
    TASK CARD
 ========================= */
 
-.task-card{
+.task-card {
+  background: white;
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 14px;
 
-  background:white;
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.05);
 
-  padding:18px;
-
-  border-radius:18px;
-
-  margin-bottom:18px;
-
-  box-shadow:0 2px 10px rgba(0,0,0,0.08);
-
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 
@@ -386,6 +386,12 @@ body {
 
 }
 
+.task-start {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
 
 
 /* START DATE */
@@ -404,14 +410,11 @@ body {
 
 /* DESCRIPTION */
 
-.task-notes{
-
-  font-size:15px;
-
-  line-height:1.5;
-
-  color:#333;
-
+.task-notes {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #374151;
 }
 
 
@@ -420,14 +423,15 @@ body {
    RIGHT SIDE
 ========================= */
 
-.task-right{
-
-  min-width:110px;
-
-  text-align:right;
-
+.task-right {
+  text-align: right;
+  min-width: 90px;
 }
 
+.remaining-label {
+  font-size: 12px;
+  color: #6b7280;
+}
 
 
 /* ENDS IN */
@@ -444,29 +448,28 @@ body {
 
 /* REMAINING TIME */
 
-.remaining-time{
-
-  font-size:22px;
-
-  font-weight:bold;
-
-  color:#2563eb;
-
-  margin:6px 0;
-
+.remaining-time {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4f46e5;
+  margin-top: 4px;
 }
 
 
 
 /* END DATE */
 
-.end-date{
-
-  font-size:12px;
-
-  color:#555;
-
+.end-date {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #111827;
 }
+
+.end-date-small {
+  font-size: 12px;
+  color: #6b7280;
+}
+
 
 
 
@@ -474,16 +477,20 @@ body {
    ACTION BUTTONS
 ========================= */
 
-.task-actions{
-
-  display:flex;
-
-  gap:10px;
-
-  margin-top:18px;
-
+.task-actions {
+  display: flex;
+  gap: 10px;
 }
 
+
+.task-actions button {
+  flex: 1;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
 
 
 .done-btn,
@@ -503,7 +510,8 @@ body {
 
 .done-btn{
 
-  background:#22c55e;
+  /* background:#22c55e; */
+  background: #549351;
 
   color:white;
 
@@ -513,7 +521,7 @@ body {
 
 .delete-btn{
 
-  background:#ef4444;
+  background:#c91f1f;
 
   color:white;
 
@@ -521,7 +529,7 @@ body {
 
 .edit-btn{
 
-  background:#f59e0b;
+  background:#f7a138;
 
   color:white;
 
@@ -693,7 +701,7 @@ MODAL BUTTONS FIX
 }
 
 #saveTaskBtn {
-  background: #4f46e5;
+  background: #87a86f;
   color: white;
 }
 
@@ -731,6 +739,24 @@ RESPONSIVE
     width: 44px;
     height: 44px;
   }
+
+  .task-top {
+    flex-direction: column;
+  }
+
+  .task-right {
+    text-align: left;
+  }
+
+  .task-actions {
+    flex-direction: column;
+  }
+
+  .timer-buttons {
+    flex-direction: column;
+  }
+
+
 }
 
 /* =========================
@@ -855,3 +881,53 @@ EMPTY TEXT STYLE (optional)
   font-size: 14px;
   padding: 10px;
 }
+
+/* =========================
+TASK TIMER
+========================= */
+.task-timer {
+  background: #f9fafb;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+
+.timer-display {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  color: #111827;
+}
+
+.timer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.timer-buttons button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* start */
+.start-timer {
+  background: #364155;
+  color: white;
+}
+
+/* reset */
+.reset-timer {
+  background: #977c7c;
+  color: white;
+}
+
+.remaining-time.expired {
+  color: red;
+  font-weight: bold;
+}
+
