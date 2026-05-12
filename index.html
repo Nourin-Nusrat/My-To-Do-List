@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Todo App</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+      <h2>Todo</h2>
+
+      <button id="closeBtn">
+        ✕
+      </button>
+    </div>
+
+    <ul>
+        <li class="menu-item" data-page="today">Today</li>
+        <li class="menu-item" data-page="all">All Tasks</li>
+        <li class="menu-item" data-page="important">Important</li>
+    </ul>
+
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+      <button id="menuBtn">
+        ☰
+      </button>
+
+      <h1>Today's Tasks</h1>
+
+    </header>
+
+    <!-- Tasks -->
+
+    <section class="task-list">
+
+      <div class="task-card">
+        <h3>Learn JavaScript</h3>
+      </div>
+
+      <div class="task-card">
+        <h3>Create Todo UI</h3>
+      </div>
+
+    </section>
+
+    <!-- Floating Button -->
+    <button class="add-btn">
+      +
+    </button>
+
+  </main>
+  <!-- Task Modal -->
+<div class="modal" id="taskModal">
+
+  <div class="modal-content">
+
+    <h2>Add Task</h2>
+
+    <input type="text" id="taskName" placeholder="Task Name">
+
+    <label>Start Date & Time</label>
+    <input type="datetime-local" id="startDateTime">
+
+    <label>End Date & Time</label>
+    <input type="datetime-local" id="endDateTime">
+
+    <textarea id="taskNotes" placeholder="Notes"></textarea>
+
+    <label>Color</label>
+
+    <select id="taskColor">
+
+    <option value="red">Red</option>
+
+    <option value="yellow">Yellow</option>
+
+    <option value="blue">Blue</option>
+
+    <option value="green">Green</option>
+
+    <option value="orange">Orange</option>
+
+    </select>
+
+    <!-- <textarea id="taskNotes" placeholder="Notes"></textarea>
+
+    <label>Select Color</label>
+
+    <input type="color" id="taskColor"> -->
+
+    <div class="modal-buttons"> 
+        
+
+      <button id="saveTaskBtn">
+        Save
+      </button>
+
+      <button id="cancelBtn">
+        Cancel
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+  <script src="script.js"></script>
+
+</body>
+</html>
