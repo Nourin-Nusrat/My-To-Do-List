@@ -5,29 +5,41 @@
   font-family:Arial;
 }
 
-body{
-  background:#f1f5f9;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb; /* light home background */
 }
-
 /* Navbar */
 
 .navbar{
   height:60px;
-  background:white;
 
   display:flex;
   align-items:center;
-
-  padding:0 15px;
-
   box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  background: #111827; /* dark bar */
+  color: #ffffff;
+  padding: 14px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
 }
+
+.navbar h1 {
+  font-size: 18px;
+  color: #f9fafb;
+  font-weight: 600;
+}
+
+/* menu button */
 
 #menuBtn{
   border:none;
-  background:none;
-
-  font-size:28px;
+  background:transparent;
+  color: white;
+  font-size:22px;
   cursor:pointer;
 }
 
@@ -523,3 +535,323 @@ body{
 
 }
 
+
+
+
+/* =========================
+HABIT SECTION
+========================= */
+.habit-section {
+  background: #eef2ff; /* light colored section */
+  margin: 10px;
+  padding: 10px;
+  border-radius: 14px;
+}
+
+/* header */
+.habit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 6px 10px;
+}
+
+/* center title style */
+.habit-header h2 {
+  margin: 0 auto;
+  color: #062f75; /* purple highlight */
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* =========================
+HABIT GRID
+========================= */
+.habit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* habit box */
+.habit-box {
+  height: 90px;
+  background: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;   /* bigger text */
+  font-weight: 600;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* empty box */
+.empty-habit {
+  font-size: 30px;
+  color: #9ca3af;
+}
+
+/* =========================
+TICK BUTTON (BIG CIRCLE)
+========================= */
+.habit-box .tick {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: #8fb4d0;
+  color: white;
+
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* =========================
+ALL HABITS BUTTON (VISIBLE + BIG)
+========================= */
+#allHabitsBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+
+  background: #073664;
+  color: white;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+/* =========================
+TASK SECTION
+========================= */
+.task-list {
+  padding: 10px;
+}
+
+/* task card */
+.task-card {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* =========================
+MODAL FIX (TASK + HABIT)
+========================= */
+.modal,
+.habit-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.active,
+.habit-modal.active {
+  display: flex;
+}
+
+/* modal box */
+.modal-content,
+.habit-modal-content {
+  width: 92%;
+  max-width: 420px;
+  background: white;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+/* =========================
+MODAL BUTTONS FIX
+========================= */
+.modal-buttons button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#saveTaskBtn {
+  background: #4f46e5;
+  color: white;
+}
+
+#cancelBtn {
+  background: #ef4444;
+  color: white;
+}
+
+/* =========================
+HABIT ITEM
+========================= */
+/* .habit-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+} */
+
+/* =========================
+RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+
+  .habit-box {
+    height: 80px;
+    font-size: 14px;
+  }
+
+  .navbar h1 {
+    font-size: 16px;
+  }
+
+  #allHabitsBtn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* =========================
+HABIT MODAL HEADER
+========================= */
+.habit-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.habit-modal-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* close button (✕) */
+#closeHabitModal {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+
+  background: #ef4444;
+  color: white;
+
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* =========================
+HABIT ADD ROW
+========================= */
+.habit-add {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.habit-add input {
+  flex: 1;
+  padding: 10px 12px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  outline: none;
+  font-size: 14px;
+}
+
+/* plus button */
+.habit-add button {
+  width: 32px;
+  height: 42px;
+
+  border-radius: 10px;
+  border: none;
+
+  background: #d8d361;
+  color: white;
+
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* =========================
+HABIT LIST ITEM
+========================= */
+.habit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 8px;
+  border-bottom: 1px solid #f1f5f9;
+
+  font-size: 16px;
+  color: #04302d;
+}
+
+/* name */
+.habit-item span {
+  flex: 1;
+}
+
+/* tick + delete buttons */
+.habit-item button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 6px;
+}
+
+/* tick button */
+.habit-item .tick {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+  background: #303f60;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* delete */
+.habit-item .delete {
+  color: #ef4444;
+}
+
+/* =========================
+EMPTY TEXT STYLE (optional)
+========================= */
+.habit-empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+  padding: 10px;
+}

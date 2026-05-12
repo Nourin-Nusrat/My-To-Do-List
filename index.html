@@ -48,15 +48,27 @@
 
     <!-- Tasks -->
 
+    <!-- ========================= -->
+  <!-- HABITS SECTION -->
+  <!-- ========================= -->
+
+ <section class="habit-section">
+
+  <div class="habit-header">
+
+    <h2>Daily Habits</h2>
+
+    <button id="allHabitsBtn" class="all-habits-btn">
+      All
+    </button>
+
+  </div>
+
+  <div class="habit-grid"></div>
+
+</section>
+
     <section class="task-list">
-
-      <div class="task-card">
-        <h3>Learn JavaScript</h3>
-      </div>
-
-      <div class="task-card">
-        <h3>Create Todo UI</h3>
-      </div>
 
     </section>
 
@@ -122,10 +134,31 @@
 
 </div>
 
+<div class="habit-modal" id="habitModal">
+
+  <div class="habit-modal-content">
+
+    <div class="habit-modal-header">
+      <h2>All Habits</h2>
+      <button id="closeHabitModal">✕</button>
+    </div>
+
+    <div class="habit-add">
+      <input id="habitInput" placeholder="New habit...">
+      <button id="addHabitBtn">+</button>
+    </div>
+
+    <div class="habit-list"></div>
+
+  </div>
+
+</div>
+
     <script src="js/utils.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/task.js"></script>
+    <script src="js/habit.js"></script>
     <script src="js/app.js"></script>
 
 
